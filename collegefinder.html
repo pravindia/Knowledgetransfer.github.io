@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="stylesheet.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<style type="text/css">
+
+#message
+{
+  height: 200px;
+}
+#headng
+{
+  text-align: center;
+  color: #0099d9;
+}
+#header
+{
+  height: 50px;
+  background: #0099d9;
+  color: #fff;
+
+}
+#webhead
+{
+  margin-top: 10px;
+  font-family: "Segoe Print";
+  margin-left: 10px;
+  font-size: 24px;
+}
+#subhead
+{
+  margin-left: 10px;
+  font-size: 24px;
+  color: #0099d9;
+}
+#sidehead
+{
+  margin-left: 20px;
+  font-size: 20px;
+  color: #0099d9;
+  font-family: "Arial";
+}
+#text
+{
+  margin-top: 30px;
+}
+input[type="email"]
+{
+  width: 250px;
+  border-radius: 3px;
+
+}
+input[type="range"]
+{
+  
+  color: #0099d9;
+  width: 250px;
+  height: 50px;
+}
+input[type="radio"]
+{
+  color: #0099d9;
+  
+}
+#line
+{
+  border-radius: 3px;
+  height: 3px;
+  color: #0099d9;
+  background-color: #0099d9;
+}
+</style>
+<script type="text/javascript">
+
+function check1()
+{
+var a,b,c,d,e,f,g,h,i,j,k,l;
+a=document.survey.email.value;
+b=document.survey.collegename.value;
+c=document.survey.stress.value;
+d=document.survey.freedom.value;
+e=document.survey.rules.value;
+f=document.survey.fineradio.value;
+g=document.survey.hostelradio.value;
+h=document.survey.facultyradio.value;
+i=document.survey.infrastructureradio.value;
+j=document.survey.exposureradio.value;
+k=document.survey.campusplacementradio.value;
+l=document.survey.univrankholderradio.value;
+if(a == "" || a== null)
+{
+alert("Please Enter the Email Address !");
+return false;
+}
+
+else if(b == "" || b== null )
+{
+alert("Please Enter the College Name !");
+return false;
+}
+
+
+}
+</script>
+
+<body>
+<div data-role="page" id="pageone">
+<div data-role="header" id="header">
+<div id="webhead">
+<font id"text">mycollege </font>
+</div></div>
+<div data-role="main" class="ui-content">
+<form action="insert.php" name="survey" method="post" enctype="multipart/form-data">
+<div id="subhead">Fill In the Details :</div><hr id="line">
+<input type="email" placeholder="Enter Your Email Address" name="email"/>
+<div id="sidehead">Type Your College Name : (Avoid Abbreviations)</div>
+<input type="text" name = "collegename"placeholder="College Name / College Code"/><hr id="line">
+<div id="subhead">Student Atmosphere In Your College</div><hr id="line">
+<div id="sidehead">Stress Level (in %)  :</div>
+<input type="range" data-popup-enabled="true" data-highlight="true"min="0" max="100" value="30" name="stress" step="1"/>
+<div id="sidehead">Freedom For Student (in %) :</div>
+<input type="range" min="0" max="100" data-popup-enabled="true" data-highlight="true" value="30" name="freedom"  step="1"/>
+<div id="sidehead">Rules (Strictness) (in %):</div>
+<input type="range" min="0" max="100" data-popup-enabled="true" data-highlight="true" value="30" name="rules" step="1"/>
+<legend>
+<div id="sidehead">Do they Collect Fine ?</div>
+</legend>
+<label for="yes">Yes</label> 
+<input type="radio" id="yes"  value="Yes"  name="fine"   />
+<label for='no'>No</label>
+<input type="radio" id="no"  value="No"  name="fine"   />
+<legend>
+<div id="sidehead">Any chance for Ragging ?</div>
+</legend>
+<label for="yesrag">Yes</label> 
+<input type="radio" id="yesrag"  value="Yes"  name="ragging"   />
+<label for="norag">No</label>
+<input type="radio"  id="norag" value="No"  name="ragging"   /><hr id="line">
+
+<div id="subhead">College Outlook</div>
+<hr id="line">
+<legend>
+<div id="sidehead">Hostel Faclities:</div>
+</legend>
+<label for="improvehostel">NeedS Improvement</label>
+<input type="radio"  id="improvehostel"  value="Needs Improvement"  name="hostel"   />
+<label for="goodhostel">Good</label>
+<input type="radio"  id="goodhostel" value="Good"  name="hostel"   />
+<label for="excellenthostel">Excellent</label>
+<input type="radio"   value="Excellent" id="excellenthostel" name="hostel"   />
+<legend>
+<div id="sidehead">Faculty (Teaching Staff) :</div></legend>
+<label for="goodfaculty">
+Good
+</label>
+<input type="radio"  id="goodfaculty" value="Good"  name="faculty"   />
+<label for="welleducated">Well Educated Staffs</label>
+<input type="radio" id="welleducated"  value="Well Educated"  name="faculty"   />
+<label for="motivational">Well Educated and Motivational Staffs</label>
+<input type="radio"   value="Motivational Staffs" id="motivational" name="faculty"   />
+<legend for="infrastructure"><div id="sidehead">Infrastructure:</div></legend>
+<label for="poorinfra">Poor </label>
+<input type="radio"   value="Poor" id="poorinfra" name="infrastructure"   />
+<label for="notexpectationinfra">Not to the Expectation </label>
+<input type="radio" id="notexpectationinfra"  value="Not to the Expectation"  name="infrastructure"   />
+<label for="fantasticinfra">Fantastic </label>
+<input type="radio"   value="Fantastic" id="fantasticinfra" name="infrastructure"   />
+<legend><div id="sidehead">Exposure</div></legend>
+<label for="verylessexposure">Very Less</label>
+<input type="radio"   value="Very Less" id="verylessexposure"  name="exposure"   />
+<label for="moderateexposure">Moderatate</label>
+<input type="radio"  id="moderateexposure" value="Moderate"  name="exposure"   />
+<label for="excellentexposure">Excellent</label>
+<input type="radio" id="excellentexposure"  value="Excellent"  name="exposure"   />
+<legend><div id="sidehead">Campus Placement:</div></legend>
+<label for="yescampus">Yes </label>
+<input type="radio"  id="yescampus" value="Yes"  name="campusplacement"   />
+<label for="nocampus">No</label>
+<input type="radio"  id="nocampus" value="No"  name="campusplacement"   />
+<legend><div id="sidehead">University Rank Holding :</div></legend>
+<label for="yesuniv">Yes</label>
+<input type="radio"   value="Yes" id="yesuniv" name="univrankholder"   />
+<label for="nouniv">No</label>
+<input type="radio"  id="nouniv" value="No"  name="univrankholder"   />
+<input type="submit" onclick="return check1()" value="Submit" name="submit">
+</form>
+</div>
+<div data-role="footer">
+<h1>Beta Version | Developed By Smazee Studio </h1>
+</div>
+</div> 
+</div>
+</body>
+</html>
